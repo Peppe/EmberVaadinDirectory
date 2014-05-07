@@ -1,0 +1,81 @@
+.main-menu {
+  padding:20px;
+  padding-bottom:10px;
+  margin-bottom:0;
+  border:none;
+}
+
+.main-menu .navbar-nav>li>a,
+.second-menu .navbar-nav>li>a {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.main-menu .nav>li>a:hover,
+.main-menu .nav>li>a:focus,
+.second-menu .nav>li>a:hover,
+.second-menu .nav>li>a:focus {
+  background-color: transparent;
+}
+
+.main-menu .navbar-nav>li>a{
+  color: #A09F91;
+  line-height: 38px;
+}
+
+
+.second-menu {
+  background-color: #13b2f6;
+  border-radius: 0;
+  border:none;
+}
+
+.second-menu .navbar-nav>li>a{
+  color: #CCF0FC;
+  line-height: 38px;
+}
+
+.main-menu .navbar-nav>li.active>a,
+.main-menu .navbar-nav>li:hover>a {
+  color:black;
+}
+
+.second-menu .navbar-nav>li.active>a,
+.second-menu .navbar-nav>li:hover>a {
+  color:white;
+}
+
+.main-menu .navbar-nav>li.active:after,
+.second-menu .navbar-nav>li.active:after {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  vertical-align: middle;
+  content: " ";
+  border-right: 10px solid white;
+  border-bottom: 10px solid #13b2f6;
+  border-left: 10px solid white;
+}
+
+.main-menu .navbar-nav>li.active:after {
+  bottom:-10px;
+  border-right: 10px solid white;
+  border-bottom: 10px solid #13b2f6;
+  border-left: 10px solid white;
+}
+
+.second-menu .navbar-nav>li.active:after {
+  border-right: 10px solid #13b2f6;
+  border-bottom: 10px solid white;
+  border-left: 10px solid #13b2f6;
+}
+
+.vaadin-logo {
+  line-height: 50px;
+}
