@@ -1,81 +1,143 @@
-.main-menu {
-  padding:20px;
-  padding-bottom:10px;
-  margin-bottom:0;
-  border:none;
+.side-menu {
+  width:200px;
+  float:left;
 }
 
-.main-menu .navbar-nav>li>a,
-.second-menu .navbar-nav>li>a {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  font-family: "Helvetica Neue",sans-serif;
-  font-size: 14px;
-  font-weight: bold;
+.side-box {
+  border: 2px solid #D9D8CB;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  display:block;
+  width:200px;
+  margin: 0;
+  padding: 8px;
+  clear:both;
+  margin-top: 14px;
 }
 
-.main-menu .nav>li>a:hover,
-.main-menu .nav>li>a:focus,
-.second-menu .nav>li>a:hover,
-.second-menu .nav>li>a:focus {
-  background-color: transparent;
+.main-side-box {
+  border-color:#A09F91;
+  padding: 18px 0;
+  margin-top:0;
 }
 
-.main-menu .navbar-nav>li>a{
+.side-box a {
+  display:block;
+}
+
+.directory-logo{
+  display: block;
+  width: 164px;
+  height: 30px;
+  background: url(../images/return-to-btn.png);
+  text-indent: -999px;
+  margin:0 auto;
+}
+
+.directory-logo>span{
+  display: block;
+  height: 100%;
+}
+
+.search-box {
+  padding: 8px;
+}
+
+.search-box>input,
+.search-box>select {
+  margin-bottom:8px;
+}
+
+.browse-header {
+  padding-left: 15px;
   color: #A09F91;
-  line-height: 38px;
+  margin-bottom: 10px;
+}
+.menu-browse.nav-pills>li{
+  margin:0;
 }
 
-
-.second-menu {
-  background-color: #13b2f6;
+.menu-browse.nav-pills>li>a {
   border-radius: 0;
-  border:none;
-}
-
-.second-menu .navbar-nav>li>a{
-  color: #CCF0FC;
-  line-height: 38px;
-}
-
-.main-menu .navbar-nav>li.active>a,
-.main-menu .navbar-nav>li:hover>a {
   color:black;
+  font-weight:bold;
+  padding: 4px 15px;
 }
 
-.second-menu .navbar-nav>li.active>a,
-.second-menu .navbar-nav>li:hover>a {
+.menu-browse.nav-pills>li.active>a {
+  background-color: #A09F91;
   color:white;
 }
 
-.main-menu .navbar-nav>li.active:after,
-.second-menu .navbar-nav>li.active:after {
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -10px;
-  vertical-align: middle;
-  content: " ";
-  border-right: 10px solid white;
-  border-bottom: 10px solid #13b2f6;
-  border-left: 10px solid white;
+.content {
+  padding: 0 10px;
+  margin-left: 200px;
+  overflow:auto;
 }
 
-.main-menu .navbar-nav>li.active:after {
-  bottom:-10px;
-  border-right: 10px solid white;
-  border-bottom: 10px solid #13b2f6;
-  border-left: 10px solid white;
+.sorting-buttons {
+
 }
 
-.second-menu .navbar-nav>li.active:after {
-  border-right: 10px solid #13b2f6;
-  border-bottom: 10px solid white;
-  border-left: 10px solid #13b2f6;
+.sorting-buttons button {
+  background-color: #40B527;
+  border: none;
+  font-weight:bold;
+  font-size:9pt;
+  padding-top: 7px;
+  padding-bottom:7px;
 }
 
-.vaadin-logo {
-  line-height: 50px;
+.sorting-buttons button.active {
+  background-color: #40B527;
+  color:white;
+  box-shadow: none;
+}
+
+.maturity-filter{
+  float:right;
+  color: #A09F91;
+  background: #EFEEE9;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  font-size: 9pt;
+  padding: 5px;
+  padding-left:10px;
+}
+
+.maturity-filter>span {
+  padding-right:10px;
+}
+
+
+.maturity-filter button {
+  background-color: white;
+  border: none;
+  font-weight:bold;
+  font-size:9pt;
+  padding-top: 3px;
+  padding-bottom: 3px;
+
+}
+
+.maturity-filter button.active {
+  background-color: #00B4F0;
+  color:white;
+  box-shadow: none;
+}
+
+.btn-group>.btn.last-active {
+border-radius: 0 4px 4px 0 !important;
+}
+
+.listing {
+  border: 2px solid #D9D8CB;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  margin-top:10px;
+  overflow:auto;
+  padding:5px 10px;
 }
