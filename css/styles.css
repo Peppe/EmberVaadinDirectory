@@ -142,21 +142,19 @@ border-radius: 0 4px 4px 0 !important;
   padding:0;
 }
 
-.listing>.row {
+.listing-header,
+.listing-footer {
+  font-weight:bold;
+  color:#A09F91;
   padding:5px;
 }
 
 .listing-header {
   border-bottom: 2px solid #D9D8CB;
-  font-weight:bold;
-  color:#A09F91;
 }
 
 .listing-footer {
   border-top: 2px solid #D9D8CB;
-  font-weight:bold;
-  color:#A09F91;
-  padding: 3px;
 }
 
 .listing-header button,
