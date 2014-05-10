@@ -138,11 +138,9 @@
           </div>
             <div class="container-fluid listing">
               <div class="row listing-header">
-                <div class="col-md-3">
+                <div class="col-md-12">
                   <button type="button" class="btn btn-link" disabled>« Previous</button>
-                  <button type="button" class="btn btn-link">Next »</button>
-                </div>
-                <div class="col-md-6 pages">
+                  <button type="button" class="btn btn-link btn-next">Next »</button>
                   <button type="button" class="btn btn-link active">1</button>
                   <button type="button" class="btn btn-link">2</button>
                   <button type="button" class="btn btn-link">3</button>
@@ -157,115 +155,113 @@
                   <button type="button" class="btn btn-link">12</button>
                   <span>...</span>
                   <button type="button" class="btn btn-link">99</button>
+                  <div class="result-count">999 Results</div>
                 </div>
-                <div class="col-md-3">999 Results</div>
               </div>
               <div class="row">
-                <div class="col-md-6 addon-first-column">
-                  <button type="button" class="btn btn-link addon-header">Add-on for Vaadin</button>
-                  <p>In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></p>
-                  <p>Some story what this add-on really does</p>
-                    <div class="row addon-summary">
-                      <div class="col-md-3">Version 1.0.0-SNAPSHOT</div>
-                      <div class="col-md-3">EXPERIMENTAL</div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star empty-star"></span>
-                        99
-                      </div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-save"></span>9999
-                      </div>
-                    </div>
+                <div class="col-md-6 addon addon-first-column">
+                  <button type="button" class="btn btn-link addon-section addon-header">Add-on for Vaadin</button>
+                  <div class="addon-section addon-category">In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></div>
+                  <div class="addon-section addon-description">Some story what this add-on really does so the user knows what to do with it.</div>
+                  <div class="addon-section addon-summary">
+                    <span class="addon-summary-section version">Version 1.0.0-SNAPSHOT</span>
+                    <span class="addon-summary-section maturity">EXPERIMENTAL</span>
+                    <span class="addon-summary-section stars">
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star empty-star"></span>
+                      99
+                    </span>
+                    <span class="addon-summary-section downloads">
+                      <span class="glyphicon glyphicon-save"></span>9999
+                    </span>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-link addon-header">Add-on for Vaadin</button>
-                  <p>In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></p>
-                  <p>Some story what this add-on really does</p>
-                    <div class="row addon-summary">
-                      <div class="col-md-3">Version 1.0.0-SNAPSHOT</div>
-                      <div class="col-md-3">EXPERIMENTAL</div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star empty-star"></span>
-                        99
-                      </div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-save"></span>9999
-                      </div>
-                    </div>
+                <div class="col-md-6 addon">
+                  <button type="button" class="btn btn-link addon-section addon-header">Add-on for Vaadin</button>
+                  <div class="addon-section addon-category">In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></div>
+                  <div class="addon-section addon-description">Some story what this add-on really does so the user knows what to do with it. This add-on has a even bigger description that makes it flow over the specified height for the box given to it. We will go on a little bit more just to make sure it is big enough.</div>
+                  <div class="addon-section addon-summary">
+                    <span class="addon-summary-section version">Version 1.0.0-SNAPSHOT</span>
+                    <span class="addon-summary-section maturity">EXPERIMENTAL</span>
+                    <span class="addon-summary-section stars">
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star empty-star"></span>
+                      99
+                    </span>
+                    <span class="addon-summary-section downloads">
+                      <span class="glyphicon glyphicon-save"></span>9999
+                    </span>
+                  </div>
                 </div>
               </div>
               <div class="row addon-row">
-                <div class="col-md-6 addon-first-column">
-                  <button type="button" class="btn btn-link addon-header">Add-on for Vaadin</button>
-                  <p>In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></p>
-                  <p>Some story what this add-on really does</p>
-                    <div class="row addon-summary">
-                      <div class="col-md-3">Version 1.0.0-SNAPSHOT</div>
-                      <div class="col-md-3">EXPERIMENTAL</div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star empty-star"></span>
-                        99
-                      </div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-save"></span>9999
-                      </div>
-                    </div>
+                <div class="col-md-6 addon addon-first-column">
+                  <button type="button" class="btn btn-link addon-section addon-header">Add-on for Vaadin</button>
+                  <div class="addon-section addon-category">In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></div>
+                  <div class="addon-section addon-description">Some story what this add-on really does so the user knows what to do with it.</div>
+                  <div class="addon-section addon-summary">
+                    <span class="addon-summary-section version">Version 1.0.0-SNAPSHOT</span>
+                    <span class="addon-summary-section maturity">EXPERIMENTAL</span>
+                    <span class="addon-summary-section stars">
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star empty-star"></span>
+                      99
+                    </span>
+                    <span class="addon-summary-section downloads">
+                      <span class="glyphicon glyphicon-save"></span>9999
+                    </span>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-link addon-header">Add-on for Vaadin</button>
-                  <p>In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></p>
-                  <p>Some story what this add-on really does</p>
-                    <div class="row addon-summary">
-                      <div class="col-md-3">Version 1.0.0-SNAPSHOT</div>
-                      <div class="col-md-3">EXPERIMENTAL</div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star filled-star"></span>
-                        <span class="glyphicon glyphicon-star empty-star"></span>
-                        99
-                      </div>
-                      <div class="col-md-3">
-                        <span class="glyphicon glyphicon-save"></span>9999
-                      </div>
-                    </div>
+                <div class="col-md-6 addon">
+                  <button type="button" class="btn btn-link addon-section addon-header">Add-on for Vaadin</button>
+                  <div class="addon-section addon-category">In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></div>
+                  <div class="addon-section addon-description">Some story what this add-on really does so the user knows what to do with it.</div>
+                  <div class="addon-section addon-summary">
+                    <span class="addon-summary-section version">Version 1.0.0-SNAPSHOT</span>
+                    <span class="addon-summary-section maturity">EXPERIMENTAL</span>
+                    <span class="addon-summary-section stars">
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star filled-star"></span>
+                      <span class="glyphicon glyphicon-star empty-star"></span>
+                      99
+                    </span>
+                    <span class="addon-summary-section downloads">
+                      <span class="glyphicon glyphicon-save"></span>9999
+                    </span>
+                  </div>
                 </div>
               </div>
               <div class="row listing-footer">
-              <div class="col-md-3">
-                <button type="button" class="btn btn-link">« Previous</button>
-                <button type="button" class="btn btn-link">Next »</button>
-              </div>
-              <div class="col-md-6 pages">
-                <button type="button" class="btn btn-link active">1</button>
-                <button type="button" class="btn btn-link">2</button>
-                <button type="button" class="btn btn-link">3</button>
-                <button type="button" class="btn btn-link">4</button>
-                <button type="button" class="btn btn-link">5</button>
-                <button type="button" class="btn btn-link">6</button>
-                <button type="button" class="btn btn-link">7</button>
-                <button type="button" class="btn btn-link">8</button>
-                <button type="button" class="btn btn-link">9</button>
-                <button type="button" class="btn btn-link">10</button>
-                <button type="button" class="btn btn-link">11</button>
-                <button type="button" class="btn btn-link">12</button>
-                <span>...</span>
-                <button type="button" class="btn btn-link">99</button>
-              </div>
-              <div class="col-md-3">999 Results</div>
+                <div class="col-md-12">
+                  <button type="button" class="btn btn-link" disabled>« Previous</button>
+                  <button type="button" class="btn btn-link btn-next">Next »</button>
+                  <button type="button" class="btn btn-link active">1</button>
+                  <button type="button" class="btn btn-link">2</button>
+                  <button type="button" class="btn btn-link">3</button>
+                  <button type="button" class="btn btn-link">4</button>
+                  <button type="button" class="btn btn-link">5</button>
+                  <button type="button" class="btn btn-link">6</button>
+                  <button type="button" class="btn btn-link">7</button>
+                  <button type="button" class="btn btn-link">8</button>
+                  <button type="button" class="btn btn-link">9</button>
+                  <button type="button" class="btn btn-link">10</button>
+                  <button type="button" class="btn btn-link">11</button>
+                  <button type="button" class="btn btn-link">12</button>
+                  <span>...</span>
+                  <button type="button" class="btn btn-link">99</button>
+                  <div class="result-count">999 Results</div>
+                </div>
               </div>
           </div> <!-- end listing -->
         </div> <!-- end content -->

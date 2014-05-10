@@ -139,7 +139,7 @@ border-radius: 0 4px 4px 0 !important;
   border-radius: 9px;
   margin-top:10px;
   overflow:auto;
-  padding:5px 10px;
+  padding:0;
 }
 
 .listing>.row {
@@ -156,17 +156,18 @@ border-radius: 0 4px 4px 0 !important;
   border-top: 2px solid #D9D8CB;
   font-weight:bold;
   color:#A09F91;
+  padding: 3px;
 }
 
 .listing-header button,
 .listing-footer button {
-  padding: 6px;
+  padding: 3px 6px;
   font-weight:bold;
   margin:0;
 }
 
-.listing-header>.pages>button.active,
-.listing-footer>.pages>button.active {
+.listing-header button.active,
+.listing-footer button.active {
   background-color:#D9D8CB;
   box-shadow:none;
   border-radius:4px;
@@ -177,10 +178,6 @@ border-radius: 0 4px 4px 0 !important;
   color:#A09F91;
 }
 
-.listing .row {
-  padding:0;
-}
-
 .addon-row {
   border-top: 2px solid #D9D8CB;
 }
@@ -189,13 +186,53 @@ border-radius: 0 4px 4px 0 !important;
   border-right: 2px solid #D9D8CB;
 }
 
+.addon {
+  padding-top:10px;
+}
+
+.addon-section {
+  padding-left: 12px;
+  padding-right: 12px;
+}
 .addon-summary {
   text-overflow:ellipsis;
   white-space: nowrap;
   overflow: hidden;
   color: #D9D8CB;
   font-size:8pt;
+  padding-top:10px;
+  padding-bottom: 6px;
 }
+
+.addon-summary-section {
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display:inline-block;
+  width:25%;
+}
+
+.addon-summary-section.version,
+.addon-summary-section.stars {
+  width:30%;
+}
+
+.addon-summary-section.downloads {
+  width:15%;
+}
+
+.addon-category button {
+  padding: 0;
+  color: #13B2F6;
+  border:none;
+}
+
+.addon-description {
+  padding: 12px 12px;
+  height:5em;
+  overflow: hidden;
+}
+
 .filled-star {
   color:orange;
 }
@@ -205,4 +242,14 @@ border-radius: 0 4px 4px 0 !important;
   font-size: 14pt;
   color:black;
   font-family: "Helvetica Neue",sans-serif;
+  padding:0 12px;
+}
+
+.result-count {
+  padding: 6px;
+  float:right;
+}
+
+.listing-header button.btn-next, .listing-footer button.btn-next {
+  margin-right: 20px;
 }
