@@ -15,6 +15,26 @@ App.IndexRoute = Ember.Route.extend({
 { "artifactId":"second" }
 ]}];*/
 
+Handlebars.registerHelper('higherThan', function(n1, n2, options) {
+  if(n1 >= n2) {
+    return true;
+  }
+  return false;
+});
+
+Ember.Handlebars.helper('stars', function(avgRating) {
+  var text = '';
+  for (var i = 0; i < 5; i++) {
+    if(avgRating>=0.5){
+      text += '<span class="glyphicon glyphicon-star filled-star"></span>';
+    } else {
+      text += '<span class="glyphicon glyphicon-star empty-star"></span>';
+    }
+    avgRating--;
+  }
+  return new Ember.Handlebars.SafeString(text);
+});
+
 var addons = [{
   "artifactId":"clara",
   "avgRating":"4.875",
