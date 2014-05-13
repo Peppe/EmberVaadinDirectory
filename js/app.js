@@ -35,6 +35,10 @@ Ember.Handlebars.helper('stars', function(avgRating) {
   return new Ember.Handlebars.SafeString(text);
 });
 
+Ember.Handlebars.helper('addonCount', function() {
+  return addons.length;
+});
+
 var addons = [{
   "artifactId":"clara",
   "avgRating":"4.875",

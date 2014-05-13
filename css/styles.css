@@ -4,6 +4,10 @@
   padding: 0 20px;
 }
 
+.main-container::after{
+  clear:both;
+}
+
 .side-menu {
   width:200px;
   float:left;
