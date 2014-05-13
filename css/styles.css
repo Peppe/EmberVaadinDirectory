@@ -1,3 +1,9 @@
+
+.main-container {
+  margin:0 auto;
+  padding: 0 20px;
+}
+
 .side-menu {
   width:200px;
   float:left;
@@ -71,7 +77,7 @@
 }
 
 .content {
-  padding: 0 10px;
+  padding-left:10px;
   margin-left: 200px;
   overflow:auto;
 }
@@ -133,10 +139,6 @@ border-radius: 0 4px 4px 0 !important;
 }
 
 .listing {
-  border: 2px solid #D9D8CB;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
   margin-top:10px;
   overflow:auto;
   padding:0;
@@ -144,17 +146,29 @@ border-radius: 0 4px 4px 0 !important;
 
 .listing-header,
 .listing-footer {
+  border: 2px solid #D9D8CB;
+  font-size: 0;
   font-weight:bold;
   color:#A09F91;
   padding:5px;
 }
 
+.listing-header span,
+.listing-footer span {
+  font-size: 14px;
+}
+
 .listing-header {
-  border-bottom: 2px solid #D9D8CB;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
 .listing-footer {
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
   border-top: 2px solid #D9D8CB;
+  top:-2px;
+  position:relative;
 }
 
 .listing-header button,
@@ -176,16 +190,19 @@ border-radius: 0 4px 4px 0 !important;
   color:#A09F91;
 }
 
-.addon-row {
-  border-top: 2px solid #D9D8CB;
-}
-
-.addon-first-column {
-  border-right: 2px solid #D9D8CB;
+.listing-content {
+  font-size:0;
+  border-left: 2px solid #D9D8CB;
+  /*border-right: 2px solid #D9D8CB;*/
 }
 
 .addon {
   padding-top:10px;
+  border-right: 2px solid #D9D8CB;
+  border-bottom: 2px solid #D9D8CB;
+  width:350px;
+  display:inline-block;
+  font-size: 14px;
 }
 
 .addon-section {
@@ -250,4 +267,51 @@ border-radius: 0 4px 4px 0 !important;
 
 .listing-header button.btn-next, .listing-footer button.btn-next {
   margin-right: 20px;
+}
+
+.main-container {
+  width:1302px; /* three addons + side menu + margins + divider +left border =  3*350 + 200 + 2*20 + 10 + 2 = 1302 */
+}
+
+@media (max-width: 1301px) {
+  .main-container {
+    width:952px; /* two addons + side menu + margins + divider +left border =  2*350 + 200 + 2*20 + 10 + 2 = 952 */
+  }
+}
+
+@media (max-width: 951px) {
+  .main-container {
+    width:742px; /* two addons + margins + left border =  2*350 + 2*20 + 2 = 752 */
+  }
+
+  .side-menu {
+    float:none;
+    width:100%;
+  }
+
+  .side-box {
+    width:100%;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-top:20px;
+    padding-left:0;
+  }
+}
+
+@media (max-width: 751px) {
+  .main-container {
+    width:392px; /* one addon + margins + left border =  350 + 2*20 + 2 = 402 */
+  }
+
+  .maturity-filter {
+    padding:5px;
+    width:100%;
+    margin-bottom:10px;
+  }
+
+  .sorting-buttons {
+
+  }
 }

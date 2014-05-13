@@ -79,3 +79,17 @@
 .vaadin-logo {
   line-height: 50px;
 }
+
+.footer {
+  position:relative;
+  margin-top: 200px;
+  height: 200px;
+  background-color: #464440;
+}
+
+.footer img {
+  position:absolute;
+  top:50%;
+  margin-top:-37px;
+  right:50px;
+}
