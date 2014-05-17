@@ -132,7 +132,11 @@
   font-size:9pt;
   padding-top: 3px;
   padding-bottom: 3px;
+  margin-left:0;
+}
 
+.maturity-filter .btn-group .btn+.btn {
+margin-left: 0;
 }
 
 .maturity-filter button.active {

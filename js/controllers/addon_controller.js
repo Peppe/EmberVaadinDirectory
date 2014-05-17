@@ -3,6 +3,7 @@ App.AddonsController = Ember.ObjectController.extend({
   search: '',
   sortProperty: 'released',
   sortAscending: true,
+  maturity: '',
 
   /* sorting and filtering of result */
   sortedAddons: (function() {
@@ -14,9 +15,10 @@ App.AddonsController = Ember.ObjectController.extend({
   }).property('filteredAddons','sortProperty'),
   filteredAddons: function() {
     var search = this.get('search');
+    var maturity = this.get('maturity');
     var result = this.get('content');
     if(search){
-      result = this.get('content').filter(function(addon) {
+      result = result.filter(function(addon) {
         var lcSearch = search.toLowerCase();
         var searchableFields = '';
         searchableFields += addon.get('name');
@@ -27,9 +29,23 @@ App.AddonsController = Ember.ObjectController.extend({
         return searchableFields.indexOf(lcSearch) != -1;
       });
     }
+
+    if(maturity){
+      result = result.filter(function(addon) {
+        var maturityFilter = ''
+        if(maturity === 'certified'){
+          maturityFilter = 'certified';
+        } else if(maturity === 'stable') {
+          maturityFilter = 'certified stable';
+        } else if(maturity === 'beta') {
+          maturityFilter = 'certified stable beta';
+        }
+        return maturityFilter.indexOf(addon.get('maturity').toLowerCase()) != -1;
+      });
+    }
     return result;
 
-  }.property('addon', 'search'),
+  }.property('addon', 'search', 'maturity'),
   /* Counting the filtered addons to show how many results we have */
   addonCount: function() {
     var count = this.get('filteredAddons').get('length');
@@ -38,6 +54,7 @@ App.AddonsController = Ember.ObjectController.extend({
 
   /* Button actions */
   actions: {
+    /* sorting */
     mostRecent: function(){
       $('.sorting-buttons .active').removeClass('active');
       $('#btn-mostRecent').addClass('active');
@@ -55,6 +72,43 @@ App.AddonsController = Ember.ObjectController.extend({
       $('#btn-topDownloads').addClass('active');
       this.set('sortProperty', 'name');
       this.set('sortAscending', true);
+    },
+    /* maturity filters */
+    certified: function(){
+      $('.maturity-filter .last-active').removeClass('last-active');
+      $('#btn-certified').addClass('active');
+      $('#btn-stable').removeClass('active');
+      $('#btn-beta').removeClass('active');
+      $('#btn-experimental').removeClass('active');
+      $('#btn-certified').addClass('last-active');
+      this.set('maturity', 'certified');
+    },
+    stable: function(){
+      $('.maturity-filter .last-active').removeClass('last-active');
+      $('#btn-certified').addClass('active');
+      $('#btn-stable').addClass('active');
+      $('#btn-beta').removeClass('active');
+      $('#btn-experimental').removeClass('active');
+      $('#btn-stable').addClass('last-active');
+      this.set('maturity', 'stable');
+    },
+    beta: function(){
+      $('.maturity-filter .last-active').removeClass('last-active');
+      $('#btn-certified').addClass('active');
+      $('#btn-stable').addClass('active');
+      $('#btn-beta').addClass('active');
+      $('#btn-experimental').removeClass('active');
+      $('#btn-beta').addClass('last-active');
+      this.set('maturity', 'beta');
+    },
+    experimental: function(){
+      $('.maturity-filter .last-active').removeClass('last-active');
+      $('#btn-certified').addClass('active');
+      $('#btn-stable').addClass('active');
+      $('#btn-beta').addClass('active');
+      $('#btn-experimental').addClass('active');
+      $('#btn-experimental').addClass('last-active');
+      this.set('maturity', '');
     }
   }
 })

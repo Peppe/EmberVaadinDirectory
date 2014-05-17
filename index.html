@@ -99,7 +99,6 @@
                 <option>&nbsp;&nbsp;Vaadin 6.1</option>
                 <option>&nbsp;&nbsp;Vaadin 6.0</option>
               </select>
-              {{search}}
             </div>
 
             <p class="lead browse-header">Browse</p>
@@ -138,10 +137,10 @@
           <div class="maturity-filter">
             <span>Showing</span>
             <div class="btn-group">
-              <button type="button" id="btn-certified" class="btn active">Certified</button>
-              <button type="button" id="btn-stable" class="btn active">Stable</button>
-              <button type="button" id="btn-beta" class="btn active last-active">Beta</button>
-              <button type="button" id="btn-experimental" class="btn">Experimental</button>
+              <button type="button" id="btn-certified" class="btn active" {{action "certified"}}>Certified</button>
+              <button type="button" id="btn-stable" class="btn active" {{action "stable"}}>Stable</button>
+              <button type="button" id="btn-beta" class="btn active" {{action "beta"}}>Beta</button>
+              <button type="button" id="btn-experimental" class="btn active last-active" {{action "experimental"}}>Experimental</button>
             </div>
           </div>
           <div class="btn-group sorting-buttons">
