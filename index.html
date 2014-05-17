@@ -20,216 +20,203 @@
   </head>
   <body>
     <script type="text/x-handlebars">
-    {{partial 'main-menu'}}
-    {{partial 'second-menu'}}
-      <div class="main-container">
-        {{partial 'side-menu'}}
-        <div class="content">
-          {{outlet}}
+      <!-- Main menu -->
+      <div class="navbar main-menu" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="vaadin-logo" href="#"><img src="images/vaadin-logo-small.png" alt="vaadin-logo" /></a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Demo</a></li>
+              <li><a href="#">Learn</a></li>
+              <li class="active"><a href="#">Download</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Tools and Serverics</a></li>
+              <li><a href="#">Company</a></li>
+            </ul>
+            <div class="navbar-right">
+              <button type="button" class="btn btn-default navbar-btn btn-xs"><span class="glyphicon glyphicon-bell"></span></button>
+              <button type="button" class="btn btn-link navbar-btn btn-xs">Sign in</button>
+              <button type="button" class="btn btn-success navbar-btn btn-xs">Register</button>
+              <button type="button" class="btn btn-info navbar-btn btn-xs"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Second menu -->
+      <div class="navbar second-menu" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Add-ons</a></li>
+              <li><a href="#">Tooling</a></li>
+              <li><a href="#">Roadmap</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+      {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="addons">
+      <!-- Actual directory -->
+      <div class="main-container">
+        <div class="side-menu">
+          <div class="side-box main-side-box">
+            <a class="directory-logo" href="#"></a>
+            <div class="search-box">
+              {{input type="text" class="form-control input-sm" id="field-search" placeholder="Search Add-ons" value=search }}
+              <select class="form-control input-sm">
+                <option>All versions</option>
+                <option>&nbsp;Vaadin 7</option>
+                <option>&nbsp;&nbsp;Vaadin 7.2</option>
+                <option>&nbsp;&nbsp;Vaadin 7.1</option>
+                <option>&nbsp;&nbsp;Vaadin 7.0</option>
+                <option>&nbsp;Vaadin 6</option>
+                <option>&nbsp;&nbsp;Vaadin 6.8</option>
+                <option>&nbsp;&nbsp;Vaadin 6.7</option>
+                <option>&nbsp;Vaadin 6.6</option>
+                <option>&nbsp;&nbsp;Vaadin 6.5</option>
+                <option>&nbsp;&nbsp;Vaadin 6.4</option>
+                <option>&nbsp;&nbsp;Vaadin 6.3</option>
+                <option>&nbsp;&nbsp;Vaadin 6.2</option>
+                <option>&nbsp;&nbsp;Vaadin 6.1</option>
+                <option>&nbsp;&nbsp;Vaadin 6.0</option>
+              </select>
+              {{search}}
+            </div>
+
+            <p class="lead browse-header">Browse</p>
+            <ul class="nav nav-pills nav-stacked menu-browse">
+              <li class="active">{{#link-to ''}}All{{/link-to}}</li>
+              <li><a href="#">UI Components</a></li>
+              <li><a href="#">Data Components</a></li>
+              <li><a href="#">Themes</a></li>
+              <li><a href="#">Tools</a></li>
+              <li><a href="#">Miscellaneous</a></li>
+              <li class="menu-browse-official"><a href="#">Official</a></li>
+            </ul>
+          </div>
+          <div class="side-box">
+            <div>Guest</div>
+            <a href="#">Authoring</a>
+          </div>
+          <div class="side-box">
+            <a href="#">Subscribe RSS</a>
+            <a href="#">Help</a>
+            <a href="#">FAQ</a>
+            <a href="#">Feedback</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        {{outlet}}
+
+      </div>
+      <div class="clearfix"></div>
       <div class="footer"><img src="images/peppe.png"></div>
     </script>
 
-  <script type="text/x-handlebars" id="main-menu">
-    <div class="navbar main-menu" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="vaadin-logo" href="#"><img src="images/vaadin-logo-small.png" alt="vaadin-logo" /></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Demo</a></li>
-            <li><a href="#">Learn</a></li>
-            <li class="active"><a href="#">Download</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Tools and Serverics</a></li>
-            <li><a href="#">Company</a></li>
-          </ul>
-          <div class="navbar-right">
-            <button type="button" class="btn btn-default navbar-btn btn-xs"><span class="glyphicon glyphicon-bell"></span></button>
-            <button type="button" class="btn btn-link navbar-btn btn-xs">Sign in</button>
-            <button type="button" class="btn btn-success navbar-btn btn-xs">Register</button>
-            <button type="button" class="btn btn-info navbar-btn btn-xs"><span class="glyphicon glyphicon-search"></span></button>
-          </div>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </div>
-  </script>
-
-  <script type="text/x-handlebars" id="second-menu">
-    <div class="navbar second-menu" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Add-ons</a></li>
-            <li><a href="#">Tooling</a></li>
-            <li><a href="#">Roadmap</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </div>
-  </script>
-
-  <script type="text/x-handlebars" id="side-menu">
-    <div class="side-menu">
-      <div class="side-box main-side-box">
-        <a class="directory-logo" href="#"></a>
-        <div class="search-box">
-          {{input type="text" class="form-control input-sm" id="field-search" placeholder="Search Add-ons" value=search}}
-          <select class="form-control input-sm">
-            <option>All versions</option>
-            <option>&nbsp;Vaadin 7</option>
-            <option>&nbsp;&nbsp;Vaadin 7.2</option>
-            <option>&nbsp;&nbsp;Vaadin 7.1</option>
-            <option>&nbsp;&nbsp;Vaadin 7.0</option>
-            <option>&nbsp;Vaadin 6</option>
-            <option>&nbsp;&nbsp;Vaadin 6.8</option>
-            <option>&nbsp;&nbsp;Vaadin 6.7</option>
-            <option>&nbsp;Vaadin 6.6</option>
-            <option>&nbsp;&nbsp;Vaadin 6.5</option>
-            <option>&nbsp;&nbsp;Vaadin 6.4</option>
-            <option>&nbsp;&nbsp;Vaadin 6.3</option>
-            <option>&nbsp;&nbsp;Vaadin 6.2</option>
-            <option>&nbsp;&nbsp;Vaadin 6.1</option>
-            <option>&nbsp;&nbsp;Vaadin 6.0</option>
-          </select>
-          {{search}}
-        </div>
-
-        <p class="lead browse-header">Browse</p>
-        <ul class="nav nav-pills nav-stacked menu-browse">
-          <li class="active"><a href="#">All</a></li>
-          <li><a href="#">UI Components</a></li>
-          <li><a href="#">Data Components</a></li>
-          <li><a href="#">Themes</a></li>
-          <li><a href="#">Tools</a></li>
-          <li><a href="#">Miscellaneous</a></li>
-          <li class="menu-browse-official"><a href="#">Official</a></li>
-        </ul>
-      </div>
-      <div class="side-box">
-        <div>Guest</div>
-        <a href="#">Authoring</a>
-      </div>
-      <div class="side-box">
-        <a href="#">Subscribe RSS</a>
-        <a href="#">Help</a>
-        <a href="#">FAQ</a>
-        <a href="#">Feedback</a>
-        <a href="#">Twitter</a>
-      </div>
-    </div>
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="listing">
-    {{partial 'top-controls'}}
-
-    <div class="listing">
-      <div class="listing-header">
-        <button type="button" class="btn btn-link" disabled>« Previous</button>
-        <button type="button" class="btn btn-link btn-next">Next »</button>
-        <button type="button" class="btn btn-link active">1</button><button type="button" class="btn btn-link">2</button>
-        <button type="button" class="btn btn-link">3</button>
-        <button type="button" class="btn btn-link">4</button>
-        <button type="button" class="btn btn-link">5</button>
-        <button type="button" class="btn btn-link">6</button>
-        <button type="button" class="btn btn-link">7</button>
-        <button type="button" class="btn btn-link">8</button>
-        <button type="button" class="btn btn-link">9</button>
-        <button type="button" class="btn btn-link">10</button>
-        <button type="button" class="btn btn-link">11</button>
-        <button type="button" class="btn btn-link">12</button>
-        <span>...</span>
-        <button type="button" class="btn btn-link">99</button>
-        <span class="result-count">{{addonCount}} Results</span>
-      </div>
-      <div class="listing-content">
-        {{#each addons}}
-          <div class="addon">
-            {{#link-to 'addon' this class='addon-header'}}{{name}}{{/link-to}}
-            <div class="addon-section addon-category">In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></div>
-            <div class="addon-section addon-description">{{summary}}</div>
-            <div class="addon-section addon-summary">
-              <span class="addon-summary-section version">{{{version}}}</span>
-              <span class="addon-summary-section maturity">{{{maturity}}}</span>
-              <span class="addon-summary-section stars">
-                {{stars avgRating}}
-                {{avgRating}}
-              </span>
-              <span class="addon-summary-section downloads">
-                <span class="glyphicon glyphicon-save"></span>9999
-              </span>
+    <script type="text/x-handlebars" data-template-name="addons/index">
+      <div class="content">
+        <div class="top-controls clearfix">
+          <div class="maturity-filter">
+            <span>Showing</span>
+            <div class="btn-group">
+              <button type="button" id="btn-certified" class="btn active">Certified</button>
+              <button type="button" id="btn-stable" class="btn active">Stable</button>
+              <button type="button" id="btn-beta" class="btn active last-active">Beta</button>
+              <button type="button" id="btn-experimental" class="btn">Experimental</button>
             </div>
           </div>
-        {{/each}}
-      </div>
-      <div class="listing-footer">
-        <button type="button" class="btn btn-link" disabled>« Previous</button>
-        <button type="button" class="btn btn-link btn-next">Next »</button>
-        <button type="button" class="btn btn-link active">1</button>
-        <button type="button" class="btn btn-link">2</button>
-        <button type="button" class="btn btn-link">3</button>
-        <button type="button" class="btn btn-link">4</button>
-        <button type="button" class="btn btn-link">5</button>
-        <button type="button" class="btn btn-link">6</button>
-        <button type="button" class="btn btn-link">7</button>
-        <button type="button" class="btn btn-link">8</button>
-        <button type="button" class="btn btn-link">9</button>
-        <button type="button" class="btn btn-link">10</button>
-        <button type="button" class="btn btn-link">11</button>
-        <button type="button" class="btn btn-link">12</button>
-        <span>...</span>
-        <button type="button" class="btn btn-link">99</button>
-        <span class="result-count">{{addonCount}} Results</span>
-      </div>
-    </div> <!-- end listing -->
-  </script>
+          <div class="btn-group sorting-buttons">
 
-  <script type="text/x-handlebars" id="addon">
-    <h1>{{name}}</h1>
-  </script>
-
-  <script type="text/x-handlebars" id="listing-addon">
-
-  </script>
-
-  <script type="text/x-handlebars" id="top-controls">
-    <div class="top-controls clearfix">
-      <div class="maturity-filter">
-        <span>Showing</span>
-        <div class="btn-group">
-          <button type="button" class="btn active">Certified</button>
-          <button type="button" class="btn active">Stable</button>
-          <button type="button" class="btn active last-active">Beta</button>
-          <button type="button" class="btn">Experimental</button>
+            <button type="button" id="btn-mostRecent" class="btn btn-default active" {{action "mostRecent"}}>Most Recent</button>
+            <button type="button" id="btn-highestRated" class="btn btn-default" {{action "highestRated"}}>Highest Rated</button>
+            <button type="button" id="btn-topDownloads" class="btn btn-default" {{action "topDownloads"}}>Top Downloads (name)</button>
+          </div>
         </div>
-      </div>
-      <div class="btn-group sorting-buttons">
-        <button type="button" class="btn btn-default active">Most Recent</button>
-        <button type="button" class="btn btn-default">Highest Rated</button>
-        <button type="button" class="btn btn-default">Top Downloads</button>
-      </div>
-    </div>
-  </script>
 
-  <script type="text/x-handlebars" id="example">
+        <div class="listing">
+          <div class="listing-header">
+            <button type="button" class="btn btn-link" disabled>« Previous</button>
+            <button type="button" class="btn btn-link btn-next">Next »</button>
+            <button type="button" class="btn btn-link active">1</button><button type="button" class="btn btn-link">2</button>
+            <button type="button" class="btn btn-link">3</button>
+            <button type="button" class="btn btn-link">4</button>
+            <button type="button" class="btn btn-link">5</button>
+            <button type="button" class="btn btn-link">6</button>
+            <button type="button" class="btn btn-link">7</button>
+            <button type="button" class="btn btn-link">8</button>
+            <button type="button" class="btn btn-link">9</button>
+            <button type="button" class="btn btn-link">10</button>
+            <button type="button" class="btn btn-link">11</button>
+            <button type="button" class="btn btn-link">12</button>
+            <span>...</span>
+            <button type="button" class="btn btn-link">99</button>
+            <span class="result-count">{{addonCount}} Results</span>{{!addonCount addons}}
+          </div>
+          <div class="listing-content">
+            {{#each item in sortedAddons}}
+              <div class="addon">
+                {{#link-to 'addon' item class='addon-header'}}{{item.name}}{{/link-to}}
+                <div class="addon-section addon-category">In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></div>
+                <div class="addon-section addon-description">{{item.summary}}</div>
+                <div class="addon-section addon-summary">
+                  <span class="addon-summary-section version">{{{item.version}}}</span>
+                  <span class="addon-summary-section maturity">{{{item.maturity}}}</span>
+                  <span class="addon-summary-section stars">
+                    {{stars item.avgRating}}
+                    {{item.avgRating}}
+                  </span>
+                  <span class="addon-summary-section downloads">
+                    <span class="glyphicon glyphicon-save"></span>9999
+                  </span>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+          <div class="listing-footer">
+            <button type="button" class="btn btn-link" disabled>« Previous</button>
+            <button type="button" class="btn btn-link btn-next">Next »</button>
+            <button type="button" class="btn btn-link active">1</button>
+            <button type="button" class="btn btn-link">2</button>
+            <button type="button" class="btn btn-link">3</button>
+            <button type="button" class="btn btn-link">4</button>
+            <button type="button" class="btn btn-link">5</button>
+            <button type="button" class="btn btn-link">6</button>
+            <button type="button" class="btn btn-link">7</button>
+            <button type="button" class="btn btn-link">8</button>
+            <button type="button" class="btn btn-link">9</button>
+            <button type="button" class="btn btn-link">10</button>
+            <button type="button" class="btn btn-link">11</button>
+            <button type="button" class="btn btn-link">12</button>
+            <span>...</span>
+            <button type="button" class="btn btn-link">99</button>
+            <span class="result-count">{{addonCount}} Results</span>
+          </div>
+        </div> <!-- end listing -->
+      </div>
+    </script>
 
-  </script>
+    <script type="text/x-handlebars" id="addon">
+      <h1>{{name}}</h1>
+    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -241,6 +228,9 @@
     <script src="js/app.js"></script>
     <script src="js/router.js"></script>
     <script src="js/models/addon.js"></script>
+    <script src="js/controllers/addon_controller.js"></script>
+    <script src="js/helpers/stars.js"></script>
+
     <!-- to activate the test runner, add the "?test" query string parameter -->
     <script src="tests/runner.js"></script>
   </body>

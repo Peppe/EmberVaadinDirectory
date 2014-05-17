@@ -7,6 +7,7 @@ App.Addon = DS.Model.extend({
   groupId: DS.attr('string'),
   linkUrl: DS.attr('string'),
   /* licenses missing here */
+  licenses: DS.attr('App.Licenses'),
   maturity: DS.attr('string'),
   name: DS.attr('string'),
   oldestRelease: DS.attr('date'),
@@ -16,23 +17,16 @@ App.Addon = DS.Model.extend({
   version: DS.attr('string'),
 });
 
+App.Licenses = DS.Model.extend({
+  artifactId: DS.attr('string'),
+  free: DS.attr('boolean'),
+  licenseFileUri: DS.attr('string'),
+  name: DS.attr('string')
+});
+
 App.Addon.FIXTURES = [
  {
-  id: 1,
-  artifactId:'clara',
-  avgRating:4.875,
-  groupId:'org.vaadin.addons',
-  linkUrl:'http://vaadin.com/addon/clara',
-  maturity:'STABLE',
-  name:'Clara',
-  oldestRelease:'2012-06-12T16:59:33+00:00',
-  proAccount:false,
-  released:'2014-05-09T12:46:34+00:00',
-  summary:'Declarative UI and Bindings for Vaadin',
-  version:'1.1.0'
- },
- {
-   id:2,
+   id:1,
    "artifactId":"clara",
    "avgRating":"4.875",
    "groupId":"org.vaadin.addons",

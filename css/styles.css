@@ -95,6 +95,13 @@
   padding-bottom:7px;
 }
 
+.sorting-buttons button:hover,
+.sorting-buttons button:active {
+  background-color: #40B527;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .sorting-buttons button.active {
   background-color: #40B527;
   color:white;
@@ -248,7 +255,7 @@ border-radius: 0 4px 4px 0 !important;
   overflow: hidden;
 }
 
-.filled-star {
+.stars .glyphicon {
   color:orange;
 }
 
