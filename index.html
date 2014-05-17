@@ -145,9 +145,9 @@
           </div>
           <div class="btn-group sorting-buttons">
 
-            <button type="button" id="btn-mostRecent" class="btn btn-default active" {{action "mostRecent"}}>Most Recent</button>
-            <button type="button" id="btn-highestRated" class="btn btn-default" {{action "highestRated"}}>Highest Rated</button>
-            <button type="button" id="btn-topDownloads" class="btn btn-default" {{action "topDownloads"}}>Top Downloads (name)</button>
+            <button type="button" id="btn-mostRecent" class="btn btn-default active" {{action 'sortAction' '#btn-mostRecent' 'released' false}}>Most Recent</button>
+            <button type="button" id="btn-highestRated" class="btn btn-default" {{action 'sortAction' '#btn-highestRated' 'avgRating' false}}>Highest Rated</button>
+            <button type="button" id="btn-topDownloads" class="btn btn-default" {{action 'sortAction' '#btn-topDownloads' 'name' true}}>Top Downloads (name)</button>
           </div>
         </div>
 

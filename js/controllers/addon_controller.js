@@ -55,23 +55,11 @@ App.AddonsController = Ember.ObjectController.extend({
   /* Button actions */
   actions: {
     /* sorting */
-    mostRecent: function(){
+    sortAction: function(button, sortProperty, sortAscending){
       $('.sorting-buttons .active').removeClass('active');
-      $('#btn-mostRecent').addClass('active');
-      this.set('sortProperty', 'released');
-      this.set('sortAscending', false);
-    },
-    highestRated: function(){
-      $('.sorting-buttons .active').removeClass('active');
-      $('#btn-highestRated').addClass('active');
-      this.set('sortProperty', 'avgRating');
-      this.set('sortAscending', false);
-    },
-    topDownloads: function(){
-      $('.sorting-buttons .active').removeClass('active');
-      $('#btn-topDownloads').addClass('active');
-      this.set('sortProperty', 'name');
-      this.set('sortAscending', true);
+      $(button).addClass('active');
+      this.set('sortProperty', sortProperty);
+      this.set('sortAscending', sortAscending);
     },
     /* maturity filters */
     certified: function(){
