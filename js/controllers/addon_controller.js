@@ -54,6 +54,12 @@ App.AddonsController = Ember.ObjectController.extend({
 
   /* Button actions */
   actions: {
+    /* category */
+    chooseCategory: function(button){
+      $('.menu-browse .active').removeClass('active');
+      $(button).addClass('active');
+      this.transitionToRoute('addons.index');
+    },
     /* sorting */
     sortAction: function(button, sortProperty, sortAscending){
       $('.sorting-buttons .active').removeClass('active');

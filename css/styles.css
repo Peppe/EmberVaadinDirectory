@@ -2,6 +2,7 @@
 .main-container {
   margin:0 auto;
   padding: 0 20px;
+  font-family: "Helvetica Neue",sans-serif;
 }
 
 .side-menu {
@@ -9,15 +10,18 @@
   float:left;
 }
 
-.side-box {
+.info-box {
   border: 2px solid #D9D8CB;
   -webkit-border-radius: 9px;
   -moz-border-radius: 9px;
   border-radius: 9px;
   display:block;
-  width:200px;
   margin: 0;
   padding: 8px;
+}
+
+.side-box {
+  width:200px;
   clear:both;
   margin-top: 14px;
 }
@@ -60,20 +64,34 @@
   color: #A09F91;
   margin-bottom: 10px;
 }
-.menu-browse.nav-pills>li{
-  margin:0;
-}
-
-.menu-browse.nav-pills>li>a {
-  border-radius: 0;
+.menu-browse .btn {
+  background-color:white;
   color:black;
+  font-size:16px;
   font-weight:bold;
+  text-align:left;
+  border-radius: 0;
   padding: 4px 15px;
+  display:block;
+  width:100%;
 }
 
-.menu-browse.nav-pills>li.active>a {
+.menu-browse .btn:focus{
+  outline:none;
+}
+.menu-browse .btn:active,
+.menu-browse .btn.active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.menu-browse .btn.active {
   background-color: #A09F91;
   color:white;
+}
+
+.menu-browse-official{
+  margin-top:10px;
 }
 
 .content {
@@ -259,15 +277,18 @@ border-radius: 0 4px 4px 0 !important;
   overflow: hidden;
 }
 
-.stars .glyphicon {
+.stars .glyphicon-star {
   color:orange;
+}
+
+.stars .glyphicon-star-empty {
+  color: #D9D8CB;
 }
 
 .addon-header {
   font-weight: bold;
   font-size: 14pt;
   color:black;
-  font-family: "Helvetica Neue",sans-serif;
   padding:0 12px;
 }
 
@@ -279,7 +300,117 @@ border-radius: 0 4px 4px 0 !important;
 .listing-header button.btn-next, .listing-footer button.btn-next {
   margin-right: 20px;
 }
+.addon-header-box {
+  padding: 20px;
+  color: #A09F91;
 
+}
+
+.addon-header-text{
+  font-size:24px;
+  font-weight:bold;
+  color: black;
+}
+
+.addon-stars,
+.addon-downloads {
+  padding-left: 20px;
+}
+
+.addon-stars .glyphicon,
+.addon-downloads .glyphicon {
+  font-size:8pt;
+  padding-top:10px;
+  padding-bottom: 6px;
+}
+.addon-downloads .glyphicon {
+  padding-right:5px;
+}
+.addon-main-content {
+  margin-top:20px;
+}
+
+.addon-right-list {
+  float:right;
+  width:320px;
+}
+
+.btn-download,
+.btn-maven {
+  text-align:left;
+  padding: 20px 60px;
+  color: white;
+  width:100%;
+  position:relative;
+}
+
+.btn-download .glyphicon,
+.btn-maven .glyphicon{
+  position:absolute;
+  right:10px;
+  top:-1px;
+  font-size:36px;
+}
+
+.btn-download {
+  background-color: #40B527;
+}
+
+.btn-maven {
+  background-color: #A19E92;
+  margin-top:20px;
+}
+
+.addon-right-list h5 {
+  margin-top:40px;
+}
+.addon-related-link {
+  padding-top:4px;
+}
+
+.addon-related-link .glyphicon {
+  color: #A19E92;
+  margin-right:10px;
+  top:2px;
+}
+
+.addon-permalink {
+  margin-top: 40px;
+}
+
+#field-permalink {
+  border-radius: 6px;
+  border-width:2px;
+}
+
+.addon-info-box {
+  margin-right:340px;
+  padding:0;
+}
+
+.addon-version {
+  background-color: #D9D8CB;
+  padding:10px;
+
+}
+
+.addon-info-box-inner {
+  padding:10px;
+}
+.addon-info-header {
+  width:100px;
+  display:inline-block;
+}
+
+.addon-highlight {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  border-color:#A09F91;
+  margin-right:20px;
+}
+
+/** Responsive layouts **/
 .main-container {
   width:1302px; /* three addons + side menu + margins + divider +left border =  3*350 + 200 + 2*20 + 10 + 2 = 1302 */
 }
