@@ -297,7 +297,7 @@ border-radius: 0 4px 4px 0 !important;
   float:right;
 }
 
-.listing-header button.btn-next, .listing-footer button.btn-next {
+.listing-header button#btn-next, .listing-footer button#btn-next {
   margin-right: 20px;
 }
 .addon-header-box {
@@ -341,19 +341,38 @@ border-radius: 0 4px 4px 0 !important;
   padding: 20px 60px;
   color: white;
   width:100%;
+  display:inline-block;
   position:relative;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.btn-download:hover,
+.btn-maven:hover{
+  color:white;
+  text-decoration:none;
 }
 
 .btn-download .glyphicon,
 .btn-maven .glyphicon{
   position:absolute;
   right:10px;
-  top:-1px;
+  top:0;
   font-size:36px;
 }
 
 .btn-download {
   background-color: #40B527;
+}
+
+.download-first-row {
+  font-size:18px;
+  font-weight:bold;
+}
+
+.download-second-row {
+  font-size:12px;
 }
 
 .btn-maven {

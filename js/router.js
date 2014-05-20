@@ -16,10 +16,4 @@ App.AddonsRoute = Ember.Route.extend({
 
 App.AddonsIndexRoute = Ember.Route.extend({
    controllerName: 'addons'
-  /*model: function () {
-    return this.modelFor('addons');
-  },
-  conroller: function () {
-    return this.controllerFor('addons');
-  }*/
 });

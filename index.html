@@ -154,25 +154,19 @@
 
         <div class="listing">
           <div class="listing-header">
-            <button type="button" class="btn btn-link" disabled>« Previous</button>
-            <button type="button" class="btn btn-link btn-next">Next »</button>
-            <button type="button" class="btn btn-link active">1</button><button type="button" class="btn btn-link">2</button>
-            <button type="button" class="btn btn-link">3</button>
-            <button type="button" class="btn btn-link">4</button>
-            <button type="button" class="btn btn-link">5</button>
-            <button type="button" class="btn btn-link">6</button>
-            <button type="button" class="btn btn-link">7</button>
-            <button type="button" class="btn btn-link">8</button>
-            <button type="button" class="btn btn-link">9</button>
-            <button type="button" class="btn btn-link">10</button>
-            <button type="button" class="btn btn-link">11</button>
-            <button type="button" class="btn btn-link">12</button>
-            <span>...</span>
-            <button type="button" class="btn btn-link">99</button>
-            <span class="result-count">{{addonCount}} Results</span>{{!addonCount addons}}
+            <button type="button" id="btn-previous" class="btn btn-link" {{action 'previous'}}>« Previous</button>
+            <button type="button" id="btn-next" class="btn btn-link" {{action 'next'}}>Next »</button>
+            {{#each onePage in pages}}
+              {{#comparator onePage.page_id page}}
+                <button type="button" class="btn btn-link active" {{action 'goToPage' onePage.page_id}}>{{onePage.page_id}}</button>
+              {{else}}
+                <button type="button" class="btn btn-link" {{action 'goToPage' onePage.page_id}}>{{onePage.page_id}}</button>
+              {{/comparator}}
+            {{/each}}
+            <span class="result-count">{{countOfAddons}} Results</span>
           </div>
           <div class="listing-content">
-            {{#each item in sortedAddons}}
+            {{#each item in paginatedAddons}}
               <div class="addon">
                 {{#link-to 'addon' item class='addon-header'}}{{item.name}}{{/link-to}}
                 <div class="addon-section addon-category">In <button type="button" class="btn btn-link">UI Components</button> by <button type="button" class="btn btn-link">Matti Meikäläinen</button></div>
@@ -192,25 +186,23 @@
             {{/each}}
           </div>
           <div class="listing-footer">
-            <button type="button" class="btn btn-link" disabled>« Previous</button>
-            <button type="button" class="btn btn-link btn-next">Next »</button>
-            <button type="button" class="btn btn-link active">1</button>
-            <button type="button" class="btn btn-link">2</button>
-            <button type="button" class="btn btn-link">3</button>
-            <button type="button" class="btn btn-link">4</button>
-            <button type="button" class="btn btn-link">5</button>
-            <button type="button" class="btn btn-link">6</button>
-            <button type="button" class="btn btn-link">7</button>
-            <button type="button" class="btn btn-link">8</button>
-            <button type="button" class="btn btn-link">9</button>
-            <button type="button" class="btn btn-link">10</button>
-            <button type="button" class="btn btn-link">11</button>
-            <button type="button" class="btn btn-link">12</button>
-            <span>...</span>
-            <button type="button" class="btn btn-link">99</button>
-            <span class="result-count">{{addonCount}} Results</span>
+            <button type="button" id="btn-previous" class="btn btn-link" {{action 'previous'}}>« Previous</button>
+            <button type="button" id="btn-next" class="btn btn-link" {{action 'next'}}>Next »</button>
+            {{#each onePage in pages}}
+              {{#comparator onePage.page_id page}}
+                <button type="button" class="btn btn-link active" {{action 'goToPage' onePage.page_id}}>{{onePage.page_id}}</button>
+              {{else}}
+                <button type="button" class="btn btn-link" {{action 'goToPage' onePage.page_id}}>{{onePage.page_id}}</button>
+              {{/comparator}}
+            {{/each}}
+            <span class="result-count">{{countOfAddons}} Results</span>
           </div>
         </div>
+    </script>
+
+    <script type="text/x-handlebars" id="components/blog-post">
+      <h1>Component: {{title}}</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
     </script>
 
     <script type="text/x-handlebars" id="addon">
@@ -231,8 +223,9 @@
       </div>
       <div class="addon-main-content">
         <div class="addon-right-list">
-          <button type="button" class="btn btn-lg btn-download"><span class="glyphicon glyphicon-arrow-down"></span>Download now</button>
-          <button type="button" class="btn btn-lg btn-maven"><span class="glyphicon glyphicon-arrow-down"></span>Maven / Ivy</button>
+          <a href="{{unbound linkUrl}}" class="btn-download"><span class="glyphicon glyphicon-arrow-down"></span><div class="download-first-row">Download now</div><div class="download-second-row">from the real Directory</div></a>
+          <a href="#" class="btn-maven"><span class="glyphicon glyphicon-arrow-down"></span><span class="glyphicon glyphicon-arrow-down"></span>Maven / Ivy</a>
+
           <h5>Related links</h5>
           <div class="addon-related-link"><span class="glyphicon glyphicon-arrow-right"></span><a href="#">Issue tracker</a></div>
           <div class="addon-related-link"><span class="glyphicon glyphicon-arrow-right"></span><a href="#">Source code</a></div>
@@ -267,8 +260,6 @@
             <p>Something was fixed</p>
           </div>
         </div>
-
-
       </div>
     </script>
 
@@ -284,6 +275,7 @@
     <script src="js/models/addon.js"></script>
     <script src="js/controllers/addon_controller.js"></script>
     <script src="js/helpers/stars.js"></script>
+    <script src="js/helpers/comparator.js"></script>
 
     <!-- to activate the test runner, add the "?test" query string parameter -->
     <script src="tests/runner.js"></script>

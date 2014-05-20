@@ -10,10 +10,3 @@ Ember.Handlebars.helper('stars', function(value, options) {
   }
   return new Ember.Handlebars.SafeString(stars);
 });
-
-
-Ember.Handlebars.helper('highlight', function(value, options) {
-  console.log(value);
-  var escaped = Handlebars.Utils.escapeExpression(value);
-  return new Ember.Handlebars.SafeString('<span class="highlight">' + escaped + '</span>');
-});

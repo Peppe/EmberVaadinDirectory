@@ -4,15 +4,12 @@ App.AddonsController = Ember.ObjectController.extend({
   sortProperty: 'released',
   sortAscending: true,
   maturity: '',
+  countOfAddons: 0,
+  itemsPerPage: 30,
+  page: 1,
+  totalPages: 0,
 
-  /* sorting and filtering of result */
-  sortedAddons: (function() {
-    return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
-      sortProperties: [this.get('sortProperty')],
-      sortAscending: this.get('sortAscending'),
-      content: this.get('filteredAddons')
-    });
-  }).property('filteredAddons','sortProperty'),
+  /* filtering, sorting and paging of result */
   filteredAddons: function() {
     var search = this.get('search');
     var maturity = this.get('maturity');
@@ -43,14 +40,50 @@ App.AddonsController = Ember.ObjectController.extend({
         return maturityFilter.indexOf(addon.get('maturity').toLowerCase()) != -1;
       });
     }
+    this.set('countOfAddons', result.get('length'));
+    this.set('totalPages', Math.ceil(result.get('length') / this.get('itemsPerPage')));
+    this.set('page', 1);
     return result;
-
   }.property('addon', 'search', 'maturity'),
-  /* Counting the filtered addons to show how many results we have */
-  addonCount: function() {
-    var count = this.get('filteredAddons').get('length');
-    return count;
-  }.property('filteredAddons'),
+
+  sortedAddons: (function() {
+    return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+      sortProperties: [this.get('sortProperty')],
+      sortAscending: this.get('sortAscending'),
+      content: this.get('filteredAddons')
+    });
+  }).property('filteredAddons','sortProperty'),
+
+  /* Functions for pagination */
+  paginatedAddons: (function() {
+    var result = this.get('sortedAddons');
+    console.log('in page');
+    var itemsPerPage = this.get('itemsPerPage');
+    var page = this.get('page')
+    var upperBound = page * itemsPerPage;
+    var lowerBound = page * itemsPerPage - itemsPerPage;
+
+
+    console.log('page: ' + page);
+    console.log('upperBound: ' + upperBound);
+    console.log('lowerBound: ' + lowerBound);
+    return result.slice(lowerBound, upperBound);
+  }).property('sortedAddons', 'page'),
+  pages: function() {
+
+    var totalPages = this.get('totalPages');
+    var pages = [];
+    var page;
+
+    for (i = 0; i < totalPages; i++) {
+      page = i + 1;
+      console.log('doing pages');
+      pages.push({ page_id: page });
+    }
+
+    return pages;
+
+  }.property('totalPages', 'page'),
 
   /* Button actions */
   actions: {
@@ -103,6 +136,22 @@ App.AddonsController = Ember.ObjectController.extend({
       $('#btn-experimental').addClass('active');
       $('#btn-experimental').addClass('last-active');
       this.set('maturity', '');
+    },
+    next: function(){
+      if(this.get('page') < this.get('totalPages')){
+        this.set('page', this.get('page')+1);
+      }
+    },
+    previous: function(){
+      if(this.get('page') > 1){
+        this.set('page', this.get('page')-1);
+      }
+    },
+    goToPage: function(page){
+      if(page >= 1 && page <= this.get('totalPages')){
+        this.set('page', page);
+      }
     }
+
   }
 })
